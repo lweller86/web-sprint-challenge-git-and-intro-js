@@ -343,10 +343,16 @@ Use artistByCountry to do the following:
 */
 
 function artistByCountry(array, nation){
-  const art = array.find((name) => nationality === "Spanish")
-  return art.name
+  const filtered = [];
+
+for(let i = 0; i < array.length; i++){
+  if(array[i].nationality === nation) {
+    filtered.push(array[i].name)
+  }
 }
-console.log(artists, "spanish")
+return filtered;
+}
+console.log(artistByCountry(artists, "Spanish"))
 
 
 
@@ -359,7 +365,7 @@ function foo() {
   console.log('its working');
   return 'bar';
 }
-foo();
+foo()
 /*Don't touch the code after this line! */
 module.exports = {
   foo,
